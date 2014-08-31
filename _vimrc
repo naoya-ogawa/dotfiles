@@ -24,4 +24,5 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 
+NeoBundle 'scrooloose/nerdtree'
 filetype plugin indent on
