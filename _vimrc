@@ -1,3 +1,5 @@
+nnoremap <f2> :NERDTreeToggle<CR>
+
 "######表示設定#######
 set number "行番号表示
 set title "編集中のファイル名を表示
