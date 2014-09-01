@@ -1,5 +1,6 @@
 "######ショートカット設定######
 nnoremap <f2> :NERDTreeToggle<CR>
+imap <c-j> <esc>
 
 "#####golangの設定#######
 if $GOROOT != ''
@@ -9,6 +10,8 @@ if $GOROOT != ''
     exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
 endif
 
+set lines=35
+set columns=150
 
 "######表示設定#######
 set number "行番号表示
