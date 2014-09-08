@@ -2,13 +2,23 @@
 nnoremap <f2> :NERDTreeToggle<CR>
 imap <c-j> <esc>
 
-"#####golangの設定#######
-if $GOROOT != ''
-    "gocode
-    set rtp+=$GOROOT/misc/vim
-   "golint
-    exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
-endif
+""#####golangの設定#######
+"if $GOROOT != ''
+"    "gocode
+"    set rtp+=$GOROOT/misc/vim
+"   "golint
+"    exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+"endif
+
+
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
 
 set lines=35
 set columns=150
@@ -45,4 +55,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 
 NeoBundle 'scrooloose/nerdtree'
+
+NeoBundleLazy 'Blackrush/vim-gocode', {"autoload": {"filetypes": ['go']}}
+
 filetype plugin indent on
