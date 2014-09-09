@@ -1,24 +1,9 @@
 "######ショートカット設定######
 nnoremap <f2> :NERDTreeToggle<CR>
+nnoremap <f3> :source ~/.vimrc<CR>
+noremap <CR> o<ESC>
 imap <c-j> <esc>
 
-""#####golangの設定#######
-"if $GOROOT != ''
-"    "gocode
-"    set rtp+=$GOROOT/misc/vim
-"   "golint
-"    exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-"endif
-
-
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menu,preview
 
 set lines=35
 set columns=150
@@ -40,6 +25,25 @@ set ignorecase "大文字/小文字の区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan "検索時に最後まで言ったら最初に戻る
 
+"###############################################
+"#  golang
+"###############################################
+if $GOROOT != ''
+
+    filetype off
+    filetype plugin indent off
+    set runtimepath+=$GOROOT/misc/vim
+    filetype plugin indent on
+    syntax on
+    autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+    set completeopt=menu,preview
+
+endif
+
+"###############################################
+"   plugin
+"###############################################
 "# neobundle
 set nocompatible
 filetype plugin indent off
