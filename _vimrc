@@ -2,11 +2,12 @@
 nnoremap <f2> :NERDTreeToggle<CR>
 nnoremap <f3> :source ~/.vimrc<CR>
 noremap <CR> o<ESC>
-imap <c-j> <esc>
-
+noremap <c-j> :!
 
 set lines=35
 set columns=150
+
+set autochdir
 
 "######表示設定#######
 set number "行番号表示
