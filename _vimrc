@@ -60,6 +60,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'bling/vim-airline'
 
 NeoBundleLazy 'Blackrush/vim-gocode', {"autoload": {"filetypes": ['go']}}
 
