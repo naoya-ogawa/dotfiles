@@ -16,6 +16,6 @@ export PATH=$PATH:$GOPATH/bin
 
 alias drun='docker run -i -t naoya0gawa/ide /bin/bash'
 alias drm='docker rm $(docker ps -a | grep -v CONTAINER | grep -v volume | awk '\''{ print $1 }'\'' )'
-alias dval='docker run -v /var/dvolume  -v /.cache/unite/bookmark -name VOLUME centos true'
+alias dval='docker run -v /var/dvolume  -v /.cache/ -name VOLUME centos true'
 alias dvrun='docker run -t -i -rm -volumes-from VOLUME -name volume-client'
 alias dide='docker run -t -i -rm -volumes-from VOLUME -name volume-client naoya0gawa/ide /bin/bash'
